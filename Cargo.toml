@@ -27,7 +27,7 @@ module = []
 [dependencies]
 pam-macros = "=0.0.3"
 libc    = "^0.2"
-pam-sys = "1.0.0-alpha5"
+pam-sys = { git = "https://github.com/coffeeispower/pam-sys" }
 memchr = "2.5.0"
 uzers = { version = "0.11.3", optional = true }
 
