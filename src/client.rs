@@ -32,7 +32,7 @@ use crate::{conv, enums::*, functions::*, types::*};
 pub struct Client<'a, C: conv::Conversation> {
     /// Flag indicating whether the Client should close the session on drop
     pub close_on_drop: bool,
-    handle: &'a mut PamHandle,
+    pub handle: &'a mut PamHandle,
     conversation: Box<C>,
     is_authenticated: bool,
     has_open_session: bool,
@@ -176,7 +176,7 @@ impl<'a, C: conv::Conversation> Client<'a, C> {
     }
 
     // Utility function to set an environment variable in PAM and the process
-    fn set_env(&mut self, key: &str, value: &str) -> PamResult<()> {
+    pub fn set_env(&mut self, key: &str, value: &str) -> PamResult<()> {
         // Set regular environment variable
         env::set_var(key, value);
 
